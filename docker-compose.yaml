@@ -6,6 +6,9 @@ services:
     container_name: app
     volumes:
       - .:/var/www
+    depends_on:
+      db:
+        condition: service_healthy
     networks:
       - app-network
 
