@@ -2,6 +2,8 @@
 
 Projeto laravel versão 7.12.0, baseado em containers
 
+Repositório Docker Hub - [Lavel](https://hub.docker.com/repository/docker/andersonscherer/laravel-app)
+
 ## Requistos
 - Docker
 
