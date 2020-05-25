@@ -6,3 +6,9 @@ services:
     container_name: app
     volumes:
       - .:/var/www
+    networks:
+      - app-network
+
+networks:
+   app-network:
+     driver: bridge
