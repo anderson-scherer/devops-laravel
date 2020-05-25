@@ -19,6 +19,8 @@ RUN curl -sS https://getcomposer.org/installer | \
 # Criando um link simbólico
 RUN ln -s public html
 
+COPY . .
+
 # Porta padrão do PHP fpn
 EXPOSE 9000
 
