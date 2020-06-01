@@ -1,0 +1,26 @@
+FROM golang:alpine AS builder
+
+# Definição do diretório principal
+WORKDIR $GOPATH/src/golang/hello/
+
+# Copiando executável
+COPY hello.go .
+
+# Defiições de Packege Get
+RUN go get -d -v
+
+# Gerando build
+RUN go build -o /go/bin/hello
+
+# Imagem simplificada com Scratch
+FROM scratch
+
+# Definição do diretório principal
+WORKDIR $GOPATH/src/golang/hello/
+
+# Copiando arquivos
+COPY --from=builder /go/bin/hello /go/bin/hello
+
+EXPOSE 8080
+
+ENTRYPOINT ["/go/bin/hello"]

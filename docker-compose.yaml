@@ -58,6 +58,13 @@ services:
     networks:
       - app-network
 
+  golang:
+    build: .docker/golang
+    container_name: golang
+    tty: true
+    ports:
+      - "8080:6060"
+
 # Redes para comunicação entre containers
 networks:
   app-network:
