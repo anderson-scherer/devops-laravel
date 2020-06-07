@@ -8,5 +8,5 @@ steps:
 ## docker-compose = Imagem docekr a ser usada
 ## arqs = argumentos para docker-compose
 - id: "Rodando docker-compose"
-  name: 'gcr.io/$PROJECT_ID/docker-compose'
-
+  name: 'docker/compose:1.19.0'
+  args: ['-f', 'docker-compose.cloudbuild.yaml', 'up', '-d']
