@@ -1,0 +1,12 @@
+# Etapas do build
+steps:
+
+# ID: Identificador
+# name: Comando de execução
+## grc.io =  Url base de registro
+## $PROJECT_ID = nome do projeto criado no GPC
+## docker-compose = Imagem docekr a ser usada
+## arqs = argumentos para docker-compose
+- id: "Rodando docker-compose"
+  name: 'gcr.io/$PROJECT_ID/docker-compose'
+  args: ['-f', 'docker-compose.cloudbuild.yaml', 'up', '-d']
